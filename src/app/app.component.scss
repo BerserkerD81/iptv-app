@@ -1,0 +1,405 @@
+.card-channel {
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    cursor: pointer;
+    position: relative;
+    max-width: 200px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-channel:hover {
+    transform: rotateY(180deg);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background-color: #f0f0f0;
+}
+
+.card-channel .card-body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #f0f0f0;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.8s;
+    pointer-events: none;
+}
+
+.card-channel:hover .card-body {
+    opacity: 1;
+}
+
+.card-channel img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.card-title {
+    text-align: center;
+    margin-top: 10px;
+}
+.card-channel:hover .card-title {
+    text-align: center;
+    margin-top: 10px;
+    transform: rotateY(-180deg); /* Anula la rotación de la tarjeta */
+}
+.card-channel:hover .card-channel img {
+    text-align: center;
+    margin-top: 10px;
+    transform: rotateY(-180deg); /* Anula la rotación de la tarjeta */
+
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination button {
+    margin: 0 10px;
+}
+
+.sidebar {
+    position: sticky;
+    top: 20px;
+    height: calc(100vh - 100px);
+    overflow-y: auto;
+}
+
+.card-height {
+    height: 80px;
+}
+
+.video-container {
+    position: relative;
+    top: -10px; /* Adjusted for 10px above */
+}
+
+#myVideo {
+    width: 100%;
+}
+
+.custom-controls {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.episode-list {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.episode-item {
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.show-hide-btn {
+    position: absolute;
+    top: 95%;
+    left: 90%;
+    transform: translate(-90%, -95%);
+    display: none;
+    height: 8vh;
+    width: 8vh;
+    background-color: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.5); /* Fondo translúcido para el estado de pausa */
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: none;
+}
+
+.episode-container {
+    position: absolute;
+    bottom: 10px; /* Adjusted for 10px above */
+    right: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo gris transparente */
+    color: #ffffff; /* Letras blancas */
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 300px; /* Ajusta el ancho según sea necesario */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Añade una sombra para mejor visibilidad */
+}
+
+.episode-list {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.episode-item {
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 1px solid #ffffff; /* Línea divisoria blanca */
+    color: #ffffff; /* Letras blancas */
+}
+
+.episode-item:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo blanco ligeramente transparente al pasar el ratón */
+}
+
+.show-hide-list {
+    position: absolute;
+    bottom: 70px; /* Adjusted for 10px above */
+    right: 6vh;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: rgba($color: #3a3a3a65, $alpha: 1.0);
+}
+
+.video-container:hover .show-hide-btn,
+.video-container:hover .show-hide-list {
+    opacity: 1;
+}
+
+.play-pause-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    height: 18vh;
+    width: 18vh;
+    background-color: transparent;
+    border: none;
+    color: rgba(129, 129, 129, 0.5); /* Fondo translúcido para el estado de pausa */
+    justify-content: center;
+    align-items: center;
+}
+
+.play-pause-btn i {
+    font-size: 100px; /* Tamaño del ícono */
+    width: 100px; /* Ancho del ícono */
+    height: 100px; /* Alto del ícono */
+    line-height: 100px; /* Alineación vertical */
+}
+
+.play-pause-btn.playing {
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.5); /* Color del ícono en estado de reproducción */
+}
+
+.play-pause-btn.paused {
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.5); /* Color del ícono en estado de reproducción */
+}
+
+.video-container:hover .play-pause-btn {
+    display: flex;
+}
+
+
+.play-pause-btn-small {
+    position: absolute;
+    top: 95%;
+    left: 5%;
+    transform: translate(-5%, -95%);
+    display: none;
+    height: 8vh;
+    width: 8vh;
+    background-color: transparent;
+    border: none;
+    color: rgba(129, 129, 129, 0.5); /* Fondo translúcido para el estado de pausa */
+    display: none; /* Utiliza flexbox */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+}
+
+.play-pause-btn-small i {
+    font-size: 6vh; /* Tamaño del ícono */
+}
+
+.play-pause-btn-small.playing {
+    color: rgba(255, 255, 255, 0.5); /* Color del ícono en estado de reproducción */
+}
+
+.play-pause-btn-small.paused {
+    color: rgba(255, 255, 255, 0.5); /* Color del ícono en estado de pausa */
+}
+
+.video-container:hover .play-pause-btn-small {
+    display: flex; /* Muestra el botón con flexbox cuando el contenedor está en hover */
+}
+
+
+.full-screen-btn-small {
+    position: absolute;
+    top: 95%;
+    left: 95%;
+    transform: translate(-95%, -95%);
+    display: none;
+    height: 8vh;
+    width: 8vh;
+    background-color: transparent;
+    border: none;
+    color: rgba(129, 129, 129, 0.5); /* Color del ícono */
+    display: none; /* Utiliza flexbox */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+}
+
+.full-screen-btn-small i {
+    font-size: 6vh; /* Tamaño del ícono */
+}
+
+.full-screen-btn-small.playing {
+    color: rgba(255, 255, 255, 0.5); /* Color del ícono en estado de reproducción */
+}
+
+.full-screen-btn-small.paused {
+    color: rgba(255, 255, 255, 0.5); /* Color del ícono en estado de pausa */
+}
+
+.video-container:hover .full-screen-btn-small {
+    display: flex; /* Muestra el botón con flexbox cuando el contenedor está en hover */
+}
+
+/* Hide controls in fullscreen mode */
+video:fullscreen::-webkit-media-controls {
+  display: none;
+}
+
+/* For Firefox */
+video:-moz-fullscreen::-moz-media-controls {
+  display: none;
+}
+
+/* For other browsers */
+video:fullscreen {
+  /* Hide controls for browsers that use this pseudo-class */
+  outline: none; /* Optional: Hide the outline */
+}
+
+/* Botones de control en pantalla completa */
+.video-container:fullscreen .play-pause-btn,
+.video-container:fullscreen .full-screen-btn-small,
+.video-container:fullscreen .show-hide-btn {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.video-container:fullscreen .play-pause-btn.hide-controls,
+.video-container:fullscreen .play-pause-btn-small.hide-controls,
+.video-container:fullscreen .full-screen-btn-small.hide-controls,
+.video-container:fullscreen .show-hide-list.hide-controls,
+.video-container:fullscreen .show-hide-btn.hide-controls {
+  opacity: 0;
+}
+
+/* Asegúrate de que los botones de control se muestren siempre cuando el mouse se mueve */
+.video-container:hover .play-pause-btn,
+.video-container:hover .full-screen-btn-small,
+.video-container:hover .show-hide-btn {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+.show-hide-btn i {
+    font-size: 6vh; /* Tamaño del ícono */
+    width: 6vh; /* Ancho del ícono */
+    height: 6vh; /* Alto del ícono */
+    line-height: 6vh; /* Alineación vertical */
+}
+
+.episode-container {
+    margin-top: -10px; /* Adjusted for 10px above */
+}
+
+.episode-item.episode-active {
+    color: red;
+}
+
+/* Remove button outline on click */
+button:focus {
+    outline: none;
+}
+/* Ajustes para los botones de control en modo pantalla completa */
+.video-container:fullscreen .show-hide-btn,
+.video-container:fullscreen .play-pause-btn,
+.video-container:fullscreen .play-pause-btn-small,
+.video-container:fullscreen .full-screen-btn-small {
+    display: flex !important; /* Asegura que los botones sean visibles */
+}
+
+/* Mantener la posición de los botones en modo pantalla completa */
+
+
+
+
+/* Asegúrate de que los botones de control no se oculten en otros navegadores */
+video:fullscreen::-webkit-media-controls {
+    display: none; /* Oculta los controles nativos de video en WebKit */
+}
+
+video:-moz-full-screen::-moz-media-controls {
+    display: none; /* Oculta los controles nativos de video en Firefox */
+}
+
+video:fullscreen {
+    outline: none; /* Opcional: Oculta el borde */
+}
+.hide-cursor {
+    cursor: none;
+  }
+  .hidden {
+    display: none;
+  }
+  
+  .show {
+    display: flex;
+  }
+
+  /* Aplica estilo personalizado para la barra de desplazamiento */
+.episode-container {
+    overflow-y: scroll; /* Asegúrate de que haya una barra de desplazamiento vertical si el contenido es largo */
+    scrollbar-width: thin; /* Para navegadores que soportan esta propiedad */
+    scrollbar-color: rgba(0, 0, 0, 0.5) rgba(0, 0, 0, 0.1); /* Color de la barra de desplazamiento y el fondo */
+  }
+  
+  /* Para WebKit (Chrome, Safari, Edge) */
+  .episode-container::-webkit-scrollbar {
+    width: 8px; /* Ancho de la barra de desplazamiento */
+  }
+  
+  .episode-container::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1); /* Fondo de la pista de la barra de desplazamiento */
+  }
+  
+  .episode-container::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.5); /* Color de la barra de desplazamiento */
+    border-radius: 4px; /* Borde redondeado para la barra de desplazamiento */
+  }
+  
+  .episode-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.7); /* Color de la barra de desplazamiento cuando se pasa el ratón por encima */
+  }
+  
